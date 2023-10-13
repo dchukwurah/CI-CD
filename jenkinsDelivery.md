@@ -1,6 +1,7 @@
-## jenkins CI/**CD**
+ Jenkins CI/ **CD**
 
-1. Firstly, we will create a new job called 'chiedozie-cd' which will be used to release our new app folder (new feature) from GitHub `main` branch to the production instance which will be running in front of clients.
+#### 3rd Job
+1. Firstly, we will create a new job called 'chiedozie-cd' which will be used to release our new app  from GitHub `main`<br<>0 branch to the production instance hosted by AWS.
 
 2. Then we can go to 'Source Code Management' and specify our `main` branch to download from since this will now be updated with the tested dev changes.
 
@@ -8,7 +9,7 @@
 
 4. Now, we can add a build step to 'Execute shell' as shown below. This will copy the app folder from the Jenkins workspace, which is from the merged main branch on GitHub, into the AWS EC2 instance, specifying the IP address of the EC2 instance to connect to. Then using the ssh command, we can remotely run commands to install and run the updated application.
 
-5. Finally, we can save the job and manually build it, if it succeeds, we can add it to the pipeline by editing our configuration for the 'chiedozie-ci-merge' job adding a 'Post-build Action' to start the 'chiedozie-cd' job, using [jenkinsMerge.md](jenkinsMerge.md).
+5. Finally, we can save the job and manually build it to test t00he  if it succeeds, we can add it to the pipeline by editing our configuration for the 'chiedozie-ci-merge' job adding a 'Post-build Action' to start the 'chiedozie-cd' job, using [jenkinsMerge.md](jenkinsMerge.md).
 
 ## Checking the CI/CD Pipeline
 
